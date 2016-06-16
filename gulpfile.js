@@ -26,6 +26,7 @@ var customOpts = {
   debug: true
 };
 var opts = assign({}, watchify.args, customOpts);
+// 这里的目的是使用 watchify 来加快 browserify 的速度。（ Rebuild 由 5-10s 左右降至 us 级别） 
 var b = watchify(browserify(opts));
 
 /** gulp task browserify */

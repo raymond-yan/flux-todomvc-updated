@@ -1,9 +1,12 @@
 {
-  "name": "todomvc-flux",
-  "version": "0.0.3",
+  "name": "flux-todomvc-updated",
+  "version": "1.0.0",
   "description": "Example Flux architecture.",
-  "repository": "https://github.com/facebook/flux",
-  "main": "js/app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raymond-yan/flux-todomvc-updated.git"
+  },
+  "main": "app/js/app.js",
   "dependencies": {
     "classnames": "^2.1.3",
     "flux": "^2.0.1",
@@ -32,8 +35,15 @@
     "test": "jest",
     "start-server": "node server.js & gulp"
   },
-  "author": "Bill Fisher",
-  "jest": {
-    "rootDir": "./js"
-  }
+  "author": "raymond-yan",
+  "keywords": [
+    "flux",
+    "react",
+    "react+flux"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raymond-yan/flux-todomvc-updated/issues"
+  },
+  "homepage": "https://github.com/raymond-yan/flux-todomvc-updated#readme"
 }
