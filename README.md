@@ -1,5 +1,7 @@
 ##简介
-
+<br>
+***<font color="red">Github: https://github.com/raymond-yan/flux-todomvc-updated</font>***
+<br>
 *[React](https://facebook.github.io/react/)* 是2014年 facebook 开放的一个javascript lib，负责管理 MVC 中的 View。 使用 React 写的 View，当View上的资料发生变动时， React 会生成一个 virtual DOM 和当前的 DOM 比较，当DOM不一样时才替换掉。这样对于频繁更换 资料 的Web app 来讲，是非常实用的一个功能。
 <br>
 *[Flux](https://facebook.github.io/flux/)* 是一个开发模式，类似于MVC，也是 facebook 提出与react 共同实用的模式。详细可以参看官方的介绍。
@@ -19,6 +21,8 @@
     <font color="red">`npm run start`</font>
  3. 最终build（ 使用 *[gulp-uglify](https://www.npmjs.com/package/gulp-uglify)* 是编译出的js文件体积变小):<br>
     <font color="red">`npm run build`</font>
+
+在开发的时候，使用 `npm run start` 即可， gulp 会实时根据用户修改的源码(任何`app`目录下的文件修改)来重新编译出新的版本。
 
 ##优势
 运行启动或者编译后，编译的文件会在 `./build` 文件夹下。使用者可以很方便在 `./app` 目录下按照 react+flux 规则来编写自己的 web app, 在 `npm run start` 后， `gulp` 会自动根据 `./app` 目录更改的文件自动重新编译到 `./build` 文件夹, 这是使用 gulp watch 的优势。
