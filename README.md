@@ -9,7 +9,7 @@
 在学习的过程中，发现很难找到一个完整的开发套件来实做FLUX+React。 因 Flux 将模组分为很多块，需要用 `node.js` 的语法将每一个模块`export`出来，然后在使用到的地方用 `require()` 来引用。那么为了方便这种模式的开发与编译，本人参考了 facebook 官方flux上的例子：*[flux-todomvc](https://github.com/facebook/flux/tree/master/examples/flux-todomvc)*，修改并生成一个方便新手入门 React+Flux 的模组。
 
 ##来源
-基本这个project都是根据 [flux-todomvc](https://github.com/facebook/flux/tree/master/examples/flux-todomvc)来生成的，只是更改了 package.json 以及添加了 gulpfile.js 文件。其中主要的变动有：
+基本这个project都是根据 [flux-todomvc](https://github.com/facebook/flux/tree/master/examples/flux-todomvc)来生成的，只是更改了 package.json 以及添加了 gulpfile.js 文件。**所以要理解React+flux的理念并以此开发自己的project，请务必参考 [flux-todomvc](https://github.com/facebook/flux/tree/master/examples/flux-todomvc) 的文档**。 其中主要的变动有：
 
  1. 修改 `package.json`, 将 react 由原来的 0.12.0 更新到最新版 15.1.0， 并且修改了 `app.js` 适应新的语法。
  2. 增加 `gulp` 功能方便编译，将 `../app/` 下的 html, img, css 和 js 文件编译到 `../build/` 文件夹下，方便测试以及最终使用。 原本 flux-todomvc 编译的结果夹杂在整个文件夹中，不方便测试以及最终出版。
