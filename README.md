@@ -11,7 +11,7 @@
 ##来源
 基本这个project都是根据 [flux-todomvc](https://github.com/facebook/flux/tree/master/examples/flux-todomvc)来生成的，只是更改了 package.json 以及添加了 gulpfile.js 文件。**所以要理解React+flux的理念并以此开发自己的project，请务必参考 [flux-todomvc](https://github.com/facebook/flux/tree/master/examples/flux-todomvc) 的文档**。 其中主要的变动有：
 
- 1. 修改 `package.json`, 将 react 由原来的 0.12.0 更新到最新版 15.1.0， 并且修改了 `app.js` 适应新的语法。
+ 1. 修改 [package.json](http://leanote.com/blog/post/5761065dab64415d8b0024c3), 将 react 由原来的 0.12.0 更新到最新版 15.1.0， 并且修改了 `app.js` 适应新的语法。
  2. 增加 `gulp` 功能方便编译，将 `../app/` 下的 html, img, css 和 js 文件编译到 `../build/` 文件夹下，方便测试以及最终使用。 原本 flux-todomvc 编译的结果夹杂在整个文件夹中，不方便测试以及最终出版。
 
 ##使用方法
@@ -19,10 +19,17 @@
     <font color="red">`npm install`</font>
  2. 启动: <br>
     <font color="red">`npm run start`</font>
- 3. 最终build（ 使用 *[gulp-uglify](https://www.npmjs.com/package/gulp-uglify)* 是编译出的js文件体积变小):<br>
+编译的文件在 `../build` 文件夹下，gulp 会实时根据用户修改的源码(任何`app`目录下的文件修改)来重新编译出新的版本。可以用 browser 直接打开 index.html 查看或者使用下一条命令 一起启动一个 node.js sever。
+<br>
+ 3. 启动(包含sever):
+    `npm run start-server`
+    start server on Running on http://localhost:8000
+<br>
+ 4. 最终build（ 使用 *[gulp-uglify](https://www.npmjs.com/package/gulp-uglify)* 使编译出的js文件体积变小):<br>
     <font color="red">`npm run build`</font>
+    
 
-在开发的时候，使用 `npm run start` 即可， gulp 会实时根据用户修改的源码(任何`app`目录下的文件修改)来重新编译出新的版本。
+
 
 ##优势
 运行启动或者编译后，编译的文件会在 `./build` 文件夹下。使用者可以很方便在 `./app` 目录下按照 react+flux 规则来编写自己的 web app, 在 `npm run start` 后， `gulp` 会自动根据 `./app` 目录更改的文件自动重新编译到 `./build` 文件夹, 这是使用 gulp watch 的优势。

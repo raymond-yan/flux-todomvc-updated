@@ -5,7 +5,9 @@ var notify = require('gulp-notify'); // notify error ( X dialog )
 var minifyCSS = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
 var buffer = require('vinyl-buffer');
+var watchify = require('watchify');
 
+var assign = require('object-assign');
 
 var path={
 	originDir: "./app",
@@ -18,11 +20,38 @@ var path={
 	destImg: "./build/img"
 };
 
+// 在这里添加自定义 browserify 选项
+var customOpts = {
+  entries: path.main,
+  debug: true
+};
+var opts = assign({}, watchify.args, customOpts);
+var b = watchify(browserify(opts));
+
 /** gulp task browserify */
 
 gulp.task( "bundle-dev", function() {
 
-	return browserify({
+	// 最優先編譯 jsx，確保後面其它 transform 運行無誤
+	return b.transform( "reactify" )
+	
+	// 所有檔案合併為一，並指定要生成 source map. add callback function to print error.
+	.bundle( function(err, buff) 
+	{	
+		if( err!= undefined )
+		{
+			console.log( '[Bundle]', err.toString());
+			gulp.src('').pipe( notify('✖ Bunlde Failed ✖') );
+			this.emit("end");
+		}
+	})
+	// 利用 vinyl-source-stream 幫檔案取名字
+    .pipe( source("bundle.js") )
+    // 接著就回到 gulp 系統做剩下事
+    // 這裏是直接存檔到硬碟
+    .pipe( gulp.dest( path.destDir ) )
+
+	/*return browserify({
 		entries: path.main,
 		debug: true
 	})
@@ -42,7 +71,7 @@ gulp.task( "bundle-dev", function() {
     .pipe( source("bundle.js") )
     // 接著就回到 gulp 系統做剩下事
     // 這裏是直接存檔到硬碟
-    .pipe( gulp.dest( path.destDir ) )
+    .pipe( gulp.dest( path.destDir ) )*/
 });
 
 
