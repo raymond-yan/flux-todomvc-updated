@@ -18,15 +18,16 @@
  1. 安装：<br>
     <font color="red">`npm install`</font>
  2. 启动: <br>
-    <font color="red">`npm run start`</font>
+    <font color="red">`npm run start`</font><br>
 编译的文件在 `../build` 文件夹下，gulp 会实时根据用户修改的源码(任何`app`目录下的文件修改)来重新编译出新的版本。可以用 browser 直接打开 index.html 查看或者使用下一条命令 一起启动一个 node.js sever。
 <br>
  3. 启动(包含sever):
     `npm run start-server`
     start server on Running on http://localhost:8000
 <br>
- 4. 最终build（ 使用 *[gulp-uglify](https://www.npmjs.com/package/gulp-uglify)* 使编译出的js文件体积变小):<br>
+ 4. 最终build:<br>
     <font color="red">`npm run build`</font>
+    使用 *[gulp-uglify](https://www.npmjs.com/package/gulp-uglify)* 使编译出的js文件体积变小
     
 
 
