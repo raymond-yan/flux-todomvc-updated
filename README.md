@@ -17,6 +17,7 @@
     `npm run start`
  3. 最终build（ 使用 *[gulp-uglify](https://www.npmjs.com/package/gulp-uglify)* 是编译出的js文件体积变小):
     `npm run build`
+
 ##优势
 运行启动或者编译后，编译的文件会在 `./build` 文件夹下。使用者可以很方便在 `./app` 目录下按照 react+flux 规则来编写自己的 web app, 在 `npm run start` 后， `gulp` 会自动根据 `./app` 目录更改的文件自动重新编译到 `./build` 文件夹, 这是使用 gulp watch 的优势。
 ##参考资料
