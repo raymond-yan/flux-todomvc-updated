@@ -52,27 +52,6 @@ gulp.task( "bundle-dev", function() {
     // 這裏是直接存檔到硬碟
     .pipe( gulp.dest( path.destDir ) )
 
-	/*return browserify({
-		entries: path.main,
-		debug: true
-	})
-	// 最優先編譯 jsx，確保後面其它 transform 運行無誤
-	.transform( "reactify" )
-	// 所有檔案合併為一，並指定要生成 source map. add callback function to print error.
-	.bundle( function(err, buff) 
-	{	
-		if( err!= undefined )
-		{
-			console.log( '[Bundle]', err.toString());
-			gulp.src('').pipe( notify('✖ Bunlde Failed ✖') );
-			this.emit("end");
-		}
-	})
-	// 利用 vinyl-source-stream 幫檔案取名字
-    .pipe( source("bundle.js") )
-    // 接著就回到 gulp 系統做剩下事
-    // 這裏是直接存檔到硬碟
-    .pipe( gulp.dest( path.destDir ) )*/
 });
 
 

@@ -41,6 +41,9 @@
     "react",
     "react+flux"
   ],
+  "jest": {
+    "unmockedModulePathPatterns": ["/node_modules/keymirror"]
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/raymond-yan/flux-todomvc-updated/issues"
